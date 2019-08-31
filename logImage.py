@@ -13,12 +13,12 @@ def logTranformationofImage(image):
     #Output: Resultant Image
     
     maximum_pixel_value = np.max(image)
-    h = image.shape[0]
-    w = image.shape[1]
+    height = image.shape[0]
+    width = image.shape[1]
     
     c = 255 / np.log(maximum_pixel_value + 1)
-    for i in range(0, h):
-        for j in range(0, w):
+    for i in range(0, height):
+        for j in range(0, width):
             image[i, j] = c * np.log(image[i, j] + 1)
     return image
     

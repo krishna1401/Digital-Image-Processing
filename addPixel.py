@@ -8,11 +8,11 @@ def addValueToPixel(image, value):
     #Input: Original Image and Value
     #Output: Resultant Image
     
-    h = image.shape[0]
-    w = image.shape[1]
+    height = image.shape[0]
+    width = image.shape[1]
     
-    for i in range(0, h):
-        for j in range(0, w):
+    for i in range(0, height):
+        for j in range(0, width):
             R, B, G = image[i, j]
             #Updating Red Color
             R += value
