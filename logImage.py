@@ -1,6 +1,6 @@
 #Program to perform Log Transformation over an Image
 #Log Transformation
-#resultant_pixel = c * pow(actual_pixel,gamma)
+#resultant_pixel = c * log(actual_pixel + 1)
 #where c is a constant calculated as 
 #c = 255/log(maximum_pixel_value + 1)
 
