@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
+
 def histogramEqualization(image):
     #Objective: Display Intensity Histogram for an Image
     #Input: Original Image
@@ -22,20 +23,21 @@ def histogramEqualization(image):
             intensityFrequency[image[i, j]] += 1.0
     
     #Probability of each Intensity Level
-    for i in range(0,255):
+    for i in range(0,256):
         intensityFrequency[i] = intensityFrequency[i]/no_of_pixels
         
     #Mapping of Intensity Level to the Corresponding Resultant Intensity Level
     #Resultant Intensity Level = floor(Cumulative Frequency of an Intensity Level * (Maximum Level - 1) + 0.5)
     cumulativeIntensityFrequency = 0.0
     mappingIntensityLevel = [0]*256
-    for i in range(0,255):
+    for i in range(0,256):
         cumulativeIntensityFrequency += intensityFrequency[i]
         mappingIntensityLevel[i] = math.floor(cumulativeIntensityFrequency * 255 + 0.5)
         
+    print(mappingIntensityLevel)    
     #Creating a Resultant Image
     #Mapping Original Intensity Level with the Resultant Intensity Level
-    resultant_image = image
+    resultant_image = image.copy()
     for i in range(0, height):
         for j in range(0, width):
             resultant_image[i ,j] = mappingIntensityLevel[image[i, j]]
