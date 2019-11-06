@@ -51,7 +51,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 #Image Averaging
-output = performAverage(img1,img2)
-cv2.imshow('image',output)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+#output = performAverage(img1,img2)
+#cv2.imshow('image',output)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()

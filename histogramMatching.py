@@ -72,6 +72,7 @@ def histogramMapping(image,target):
     mappingIntensityLevel = [0]*256
     for i in range(0,256):
         for j in range(0,256):
+            #Make Changes
             if imageCumulativeIntensity[i] == targetCumulativeIntensity[j]:
                 mappingIntensityLevel[i] = j
                 break

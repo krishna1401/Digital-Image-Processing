@@ -19,7 +19,8 @@ def unsharpMasking(image):
     for i in range(1,image.shape[0]-1):
         for j in range(1,image.shape[1]-1):
             blur_factor = (image[i-1, j-1] + image[i-1, j] - image[i-1, j+1] + image[i, j-1] + image[i, j] + image[i, j+1] + image[i+1, j+1] + image[i+1, j] + image[i+1, j+1])/9
-            resultant_image[i, j] = image[i, j] - blur_factor
+            mask = image[i, j] - blur_factor
+            resultant_image[i, j] = image[i, j] + mask
             
     return resultant_image
 
